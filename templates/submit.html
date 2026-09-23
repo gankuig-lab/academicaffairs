@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 max-w-2xl mx-auto">
+    <h2 class="text-2xl font-bold text-slate-800 mb-6 border-b pb-4">Admission Follow-Up</h2>
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+
+        <!-- Row 1: Name and Phone -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+                {{ form.full_name.label(class="block text-sm font-bold text-gray-700 mb-1") }}
+                {{ form.full_name(class="w-full border-gray-300 rounded p-2.5 bg-gray-50 border focus:border-blue-500") }}
+            </div>
+            <div>
+                {{ form.phone.label(class="block text-sm font-bold text-gray-700 mb-1") }}
+                {{ form.phone(class="w-full border-gray-300 rounded p-2.5 bg-gray-50 border focus:border-blue-500") }}
+            </div>
+        </div>
+
+        <!-- Row 2: Reference ID and Program -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+                {{ form.reference_id.label(class="block text-sm font-bold text-gray-700 mb-1") }}
+                {{ form.reference_id(class="w-full border-gray-300 rounded p-2.5 bg-gray-50 border focus:border-blue-500") }}
+            </div>
+            <div>
+                {{ form.program.label(class="block text-sm font-bold text-gray-700 mb-1") }}
+                {{ form.program(class="w-full border-gray-300 rounded p-2.5 bg-gray-50 border focus:border-blue-500") }}
+            </div>
+        </div>
+
+        <!-- Row 3: Message -->
+        <div class="mb-4">
+            {{ form.message.label(class="block text-sm font-bold text-gray-700 mb-1") }}
+            {{ form.message(class="w-full border-gray-300 rounded p-2.5 border h-32 focus:border-blue-500") }}
+        </div>
+
+        <!-- Row 4: File Upload -->
+        <div class="mb-6 p-4 bg-blue-50 rounded border border-blue-100">
+            {{ form.document.label(class="block text-sm font-bold text-blue-900 mb-2") }}
+            {{ form.document(class="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-blue-600 file:text-white cursor-pointer hover:file:bg-blue-700 transition") }}
+        </div>
+
+        {{ form.submit(class="w-full bg-slate-900 text-white font-bold py-3 rounded hover:bg-slate-800 transition cursor-pointer shadow-md") }}
+    </form>
+</div>
+{% endblock %}

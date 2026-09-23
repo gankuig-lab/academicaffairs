@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-4xl mx-auto mt-12 text-center">
+    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+        <i class="ph-fill ph-student text-4xl"></i>
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Academic Affairs Service Hub</h1>
+    <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+        A centralized digital platform to submit enquiries, request updates, and seamlessly track your communication with the ATU Academic Affairs Directorate.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <!-- Submit Card -->
+        <a href="{{ url_for('submit_ticket') }}" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-blue-500 hover:shadow-md transition group text-left">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                <i class="ph-bold ph-paper-plane-tilt text-xl"></i>
+            </div>
+            <h2 class="text-xl font-bold text-slate-800 mb-2">Submit a Request</h2>
+            <p class="text-sm text-gray-500">Open a new ticket for admissions enquiries, document requests, or bio-data updates.</p>
+        </a>
+
+        <!-- Track Card -->
+        <a href="{{ url_for('track_gateway') }}" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-amber-500 hover:shadow-md transition group text-left">
+            <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500 group-hover:text-white transition">
+                <i class="ph-bold ph-magnifying-glass text-xl"></i>
+            </div>
+            <h2 class="text-xl font-bold text-slate-800 mb-2">Track a Ticket</h2>
+            <p class="text-sm text-gray-500">Check the status of an existing request, view staff notes, or send a reply.</p>
+        </a>
+    </div>
+</div>
+{% endblock %}
